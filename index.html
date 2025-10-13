@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luck8 Nổ Hũ</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <section class="app-section d-block d-md-none">
+        <!-- App Header -->
+        <div class="app-header d-block d-md-none bg-white ">
+            <div class="container-fluid d-flex align-items-end p-0">
+                <!-- 左：App Icon + 名稱 + 開發商 -->
+                <div class="d-flex">
+                    <img src="/images/app-icon.png" alt="Luck8" class="app-icon me-3">
+                    <div class="d-flex flex-column justify-content-between">
+                        <div class="">
+                            <div class="app-title">Luck8 Nổ Hũ</div>
+                            <div class="app-subtitle">Luck8</div>
+                        </div>
+                        <button class="btn btn-primary app-cta me-2">Nhận</button>
+                    </div>
+                </div>
+
+                <!-- 右：下載按鈕 + 分享 -->
+                <div class="ms-auto d-flex align-items-center">
+                    <button class="btn p-0 app-share">
+                        <img src="/images/share-icon.png" alt="Share" class="share-icon">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Section -->
+        <div class="app-info d-block d-md-none bg-white border-top border-bottom py-3 mx-3 my-3">
+            <div class="container-fluid">
+                <div class="row text-center">
+                    <!-- 評分 -->
+                    <div class="col-4 app-info-item border-end">
+                        <div class="small text-muted">4K đánh giá</div>
+                        <div class="fw-bold fs-5">4.9</div>
+                        <div class="stars">★★★★★</div>
+                    </div>
+
+                    <!-- 年齡 / 編輯精選 -->
+                    <div class="col-4 app-info-item border-end">
+                        <div class="small text-muted">Tuổi</div>
+                        <div class="icon mb-1 py-1">
+                            <img src="/images/editor-choice.png" alt="Editor Choice" width="24">
+                        </div>
+                        <div class="small">Lựa chọn của<br>biên tập viên</div>
+                    </div>
+
+                    <!-- 開發商 -->
+                    <div class="col-4 app-info-item">
+                        <div class="small text-muted">Nhà phát triển</div>
+                        <div class="icon mb-1 py-2">
+                            <img src="/images/dev-icon.png" alt="Dev" width="24">
+                        </div>
+                        <div class="small">ROIBest</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 滑動圖片區 -->
+        <div class="app-scroll overflow-auto mx-3">
+            <div class="d-flex flex-row flex-nowrap">
+                <div class="app-card me-2">
+                    <img src="/images/game1.jpg" class="img-fluid rounded-3" alt="Game 1">
+                </div>
+                <div class="app-card me-2">
+                    <img src="/images/game2.jpg" class="img-fluid rounded-3" alt="Game 2">
+                </div>
+                <div class="app-card me-2">
+                    <img src="/images/game3.jpg" class="img-fluid rounded-3" alt="Game 3">
+                </div>
+            </div>
+        </div>
+
+        <!-- App 描述區域 -->
+        <div class="app-desc d-block d-md-none bg-white border-top border-bottom py-3 mx-3 my-3">
+            <div class="container-fluid">
+                <!-- 描述 + Xem thêm -->
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <p class="mb-0 text-truncate flex-grow-1">
+                        Tại đây có đầy đủ tất cả các game hiện hành, với nhiều ưu đãi cực hấp dẫn, đội ngũ nhân viên kỹ
+                        thuật có mặt mọi lúc...
+                    </p>
+                    <a href="#" class="see-more ms-2">Xem thêm</a>
+                </div>
+
+                <!-- 開發商資訊 -->
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <a href="#" class="dev-link d-block">Luck8</a>
+                        <span class="dev-role">Nhà phát triển</span>
+                    </div>
+                    <div>
+                        <img src="/images/chevron-right.png" alt="" class="chevron">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 評分區域 -->
+        <div class="app-ratings d-block d-md-none mx-3">
+            <div class="container-fluid">
+
+                <!-- 標題列 -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="section-title mb-0">Đánh giá & Bình luận</h5>
+                    <a href="#" class="see-all">Xem tất cả</a>
+                </div>
+
+                <div class="row g-0 align-items-start">
+                    <!-- 左：大字評分 -->
+                    <div class="col-auto pe-4">
+                        <div class="rating-big">4.9</div>
+                        <div class="rating-sub">Đánh giá: 5</div>
+                    </div>
+
+                    <!-- 右：星等分佈 -->
+                    <div class="col">
+                        <ul class="rating-histo list-unstyled mb-0">
+                            <!-- 依實際數據替換 inline width 即可 -->
+                            <li class="h-row">
+                                <span class="stars">★★★★★</span>
+                                <div class="bar"><span style="width:96%"></span></div>
+                            </li>
+                            <li class="h-row">
+                                <span class="stars">★★★★☆</span>
+                                <div class="bar"><span style="width:18%"></span></div>
+                            </li>
+                            <li class="h-row">
+                                <span class="stars">★★★☆☆</span>
+                                <div class="bar"><span style="width:6%"></span></div>
+                            </li>
+                            <li class="h-row">
+                                <span class="stars">★★☆☆☆</span>
+                                <div class="bar"><span style="width:3%"></span></div>
+                            </li>
+                            <li class="h-row">
+                                <span class="stars">★☆☆☆☆</span>
+                                <div class="bar"><span style="width:2%"></span></div>
+                            </li>
+                        </ul>
+
+                        <!-- 右下角總評論數 -->
+                        <div class="rating-count text-end mt-2">4K đánh giá</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 單一用戶評論 -->
+        <div class="review-card d-block d-md-none">
+            <div class="card-body">
+                <!-- 用戶名 -->
+                <h6 class="review-user mb-1">Trung Tín</h6>
+
+                <!-- 星等 + 日期 -->
+                <div class="d-flex align-items-center mb-2">
+                    <div class="stars me-2">★★★★★</div>
+                    <div class="review-date">September 8, 2025</div>
+                </div>
+
+                <!-- 內容 + Xem thêm -->
+                <div class="d-flex justify-content-between align-items-start">
+                    <p class="review-text mb-0">
+                        Rất vui ， đáng tin cậy !
+                    </p>
+                    <a href="#" class="see-more ms-2">Xem thêm</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- APP 隱私說明區塊 -->
+        <div class="privacy-header d-block d-md-none">
+            <!-- 標題 + link -->
+            <div class="d-flex  align-items-center mb-2">
+                <h5 class="fw-bold mb-0">Quyền riêng tư của ứng dụng</h5>
+                <a href="#" class="see-more">Xem chi tiết</a>
+            </div>
+
+            <!-- 描述 -->
+            <p class="desc">
+                Nhà phát triển <span class="fw-bold">Luck8</span> cho biết
+                <a href="#">chính sách quyền riêng tư của ứng dụng này</a>
+                có thể bao gồm các phương pháp xử lý dữ liệu sau:
+            </p>
+
+            <!-- 卡片 -->
+            <div class="privacy-card">
+                <div class="icon text-center mb-2">
+                    <img src="/images/track-icon.png" alt="track" width="32">
+                </div>
+                <h6 class="fw-bold text-center">Dữ liệu dùng để theo dõi bạn</h6>
+                <p class="text-muted small text-center">
+                    Các dữ liệu sau có thể được dùng để theo dõi bạn trên các ứng dụng
+                    và trang web thuộc sở hữu của các công ty khác:
+                </p>
+                <div class="d-flex justify-content-start flex-wrap gap-5 mt-3">
+                    <span class="privacy-item">
+                        <img src="/images/icon-1.png" alt="" width="20">
+                        Nhận dạng
+                    </span>
+                    <span class="privacy-item">
+                        <img src="/images/icon-2.png" alt="" width="20">
+                        Dữ liệu sử dụng</span>
+                </div>
+            </div>
+
+            <!-- 卡片 #2 -->
+            <div class="privacy-card">
+                <div class="icon text-center mb-2">
+                    <img src="/images/unlink-icon.png" alt="unlink" width="32">
+                </div>
+                <h6 class="fw-bold text-center">Dữ liệu liên kết với bạn</h6>
+                <p class="text-muted small text-center">
+                    Nhà phát triển có thể thu thập các dữ liệu sau và dữ liệu này được liên kết
+                    với danh tính của bạn:
+                </p>
+                <div class="d-flex justify-content-start flex-wrap gap-5 mt-3">
+                    <span class="privacy-item">
+                        <img src="/images/icon-1.png" alt="" width="20">
+                        Nhận dạng</span>
+                    <span class="privacy-item">
+                        <img src="/images/icon-2.png" alt="" width="20">
+                        Dữ liệu sử dụng</span>
+                </div>
+            </div>
+
+            <!-- 卡片 #3 -->
+            <div class="privacy-card">
+                <div class="icon text-center mb-2">
+                    <img src="/images/unlinkNote-icon.png" alt="unlink" width="32">
+                </div>
+                <h6 class="fw-bold text-center">Dữ liệu không liên kết với bạn</h6>
+                <p class="text-muted small text-center">
+                    Nhà phát triển có thể thu thập các dữ liệu sau nhưng không liên kết với danh tính của bạn:
+                </p>
+
+                <!-- 2×2 排列 -->
+                <div class="privacy-grid">
+                    <span class="privacy-item">
+                        <img src="/images/icon-3.png" alt="unlink" width="20">
+                        Thông tin liên hệ</span>
+                    <span class="privacy-item"> <img src="/images/icon-1.png" alt="unlink" width="20">Nhận dạng</span>
+                    <span class="privacy-item">
+                        <img src="/images/icon-4.png" alt="unlink" width="20">
+                        Thông tin chẩn đoán</span>
+                    <span class="privacy-item">
+                        <img src="/images/icon-5.png" alt="unlink" width="20">
+                        Dữ liệu khác</span>
+                </div>
+            </div>
+            <!-- 最下方補充說明 -->
+            <p class="privacy-note">
+                Chính sách quyền riêng tư có thể thay đổi tùy theo các tính năng bạn sử dụng
+                hoặc độ tuổi của bạn. <a href="#">Tìm hiểu thêm</a>
+            </p>
+        </div>
+
+        <!-- 內容最底資訊 -->
+        <div class="info-section d-block d-md-none">
+            <h4 class="info-title">Information</h4>
+
+            <div class="info-item">
+                <span class="label">Tương thích</span>
+                <span class="value">Có thể dùng trên iPhone này</span>
+            </div>
+
+            <div class="info-item">
+                <span class="label">Tuổi</span>
+                <span class="value">không giới hạn</span>
+            </div>
+
+            <div class="info-item">
+                <span class="label">Nhà cung cấp</span>
+                <span class="value">Luck8</span>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="#" class="contact-link">Contact developer</a>
+            </div>
+        </div>
+
+        <!-- 固定下方 icon bar -->
+        <nav class="app-navbar fixed-bottom bg-white border-top">
+            <div class="">
+                <div class="d-flex justify-content-around text-center">
+                    <div class="nav-item flex-fill py-2">
+                        <img src="images/icon-today.png" alt="Today" class="icon" />
+                        <div class="small">Today</div>
+                    </div>
+                    <div class="nav-item flex-fill py-2">
+                        <img src="images/icon-game.png" alt="Game" class="icon" />
+                        <div class="small">Trò chơi</div>
+                    </div>
+                    <div class="nav-item flex-fill py-2">
+                        <img src="images/icon-app.png" alt="App" class="icon" />
+                        <div class="small text-Primary">Ứng dụng</div>
+                    </div>
+                    <div class="nav-item flex-fill py-2">
+                        <img src="images/icon-search.png" alt="Search" class="icon" />
+                        <div class="small">Tìm kiếm</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </section>
+
+
+    <!-- iOS 版黑幕 -->
+    <div id="overlay-ios" class="install-overlay" hidden>
+        <!-- 右上角虛線箭頭（固定圖） -->
+        <img id="step-guide-1" class="ios-guide" src="/images/ios-icon1.png" alt="iOS guide arrow">
+
+        <div class="install-sheet ios-sheet" role="document" aria-label="Hướng dẫn iOS">
+            <!-- TOP：白色泡泡 + 徽章 -->
+            <div class="ios-bubble step1-anchor">
+                <span class="step-badge step1-badge">Bước 1</span>
+                <div class="bubble-text">Nhấp vào góc trên bên phải</div>
+                <img class="ios-ellipsis-img" src="/images/ios-more.png" alt="...">
+            </div>
+
+            <!-- BOTTOM：整張白卡（上/下 row 圖 + 紅框列） -->
+            <div class="ios-bottom-card">
+                <div class="ios-bottom-box">
+                    <img src="/images/row-top.png" class="ios-row ios-row-top" alt="" height="45">
+
+                <div class="ios-bottom-inner">
+                    <div class="focus-row step2-anchor is-cta">
+                        <div class="left">
+                            <span class="icon-bubble">
+                                <img class="icon" src="/images/ios-more1.png" alt="">
+                            </span>
+                            <span class="label">Mở bằng trình duyệt bên ngoài</span>
+                        </div>
+
+                    </div>
+                </div>
+                <img src="/images/row-footer.png" class="ios-row ios-row-bottom" alt="" height="45">
+                </div>
+                
+            </div>
+
+            <!-- 手指 GIF（JS 會對齊到徽章中心） -->
+            <img src="/images/hand-top.gif" class="hand hand-top" alt="">
+            <img src="/images/hand-bottom.gif" class="hand hand-bottom" alt="">
+        </div>
+    </div>
+
+
+
+    <!-- Android 黑幕區塊 -->
+    <div id="overlay-android" class="install-overlay" role="dialog" aria-modal="true">
+        <div class="install-sheet" role="document" aria-label="Cài đặt ứng dụng">
+            <h5 class="sheet-title">Cài đặt ứng dụng</h5>
+            <!-- 步驟 1：圖片 + 錨點 + 藍色徽章 -->
+            <div class="step1-anchor">
+                <img src="/images/step-1.png" alt="" class="guide-top" width="100%">
+                <span class="step-badge step1-badge">Bước 1</span>
+            </div>
+
+            <ul class="sheet-list-top">
+                <li class="sheet-item-top"><span>Sao chép</span>
+                    <span class="mono">
+                        <img src="/images/darkIcon-1.png" alt="" width="20">
+                    </span>
+                </li>
+            </ul>
+
+            <ul class="sheet-list pb-0">
+                <li class="sheet-item"><span>Thêm vào danh sách đọc</span>
+                    <span>
+                        <img src="/images/darkIcon-2.png" alt="" srcset="" width="20">
+                    </span>
+                </li>
+                <li class="sheet-item"><span>Thêm dấu trang</span><span> <img src="/images/darkIcon-3.png" alt=""
+                            srcset="" width="20"></span></li>
+                <li class="sheet-item"><span>Thêm vào mục yêu thích</span><span> <img src="/images/darkIcon-4.png"
+                            alt="" srcset="" width="20"></span></li>
+                <li class="sheet-item"><span>Thêm vào Ghi chú nhanh</span><span> <img src="/images/darkIcon-5.png"
+                            alt="" srcset="" width="20"></span></li>
+                <li class="sheet-item"><span>Tìm trên Trang</span><span> <img src="/images/darkIcon-6.png" alt=""
+                            srcset="" width="20"></span></li>
+                <!-- 步驟 2：目標列 + 錨點 + 藍色徽章 -->
+                <li class="sheet-item step2-anchor is-cta">
+                    <span class="fw-bold">Thêm vào Màn hình chính</span><span> <img src="/images/darkIcon-7.png" alt=""
+                            srcset="" width="20"></span>
+                    <span class="step-badge step2-badge text-white">Bước 2</span>
+                </li>
+            </ul>
+            <!-- 手指 GIF（JS 會把它們對齊到徽章中心） -->
+            <img src="/images/hand-top.gif" alt="" class="hand hand-top">
+            <img src="/images/hand-bottom.gif" alt="" class="hand hand-bottom">
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

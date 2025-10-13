@@ -1,0 +1,871 @@
+.app-section {
+    background: #f8f9fa;
+    min-height: 100vh;
+    padding-bottom: 60px; // 預留 icon bar 高度
+}
+
+.app-carousel {
+    padding: 0 12px;
+    margin-bottom: 1rem;
+
+    .carousel-item {
+        flex: 0 0 auto;
+        width: 70%; // 手機每次顯示大約 70%
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+.app-navbar {
+    .icon {
+        width: 24px;
+        height: 24px;
+        display: block;
+        margin: 0 auto 4px;
+    }
+
+    .small {
+        font-size: 12px;
+        color: #555;
+    }
+}
+
+.app-section {
+    background: #f8f9fa;
+    min-height: 100vh;
+    padding-bottom: 64px;
+}
+
+/* 預留底部固定列高度 */
+
+.app-scroll {
+    padding: 0 12px;
+    margin-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+}
+
+.app-scroll .d-flex {
+    gap: .5rem;
+}
+
+.app-card {
+    flex: 0 0 60%;
+    /* 每張卡片佔 50% 螢幕寬 */
+    scroll-snap-align: start;
+}
+
+.app-card img {
+    border-radius: 12px;
+    /* 圓角小一點比較像 App Store */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+.app-navbar .icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin: 0 auto 4px;
+}
+
+.app-navbar .small {
+    font-size: 12px;
+    color: #555;
+}
+
+
+.app-header {
+    .app-icon {
+        width: 118px;
+        height: 118px;
+        border-radius: 14px; // App Store icon 樣式
+        object-fit: cover;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+
+    .btn {
+        border-radius: 20px; // App Store 按鈕圓角
+        font-weight: 600;
+    }
+
+    .share-btn img {
+        filter: invert(34%) sepia(80%) saturate(1998%) hue-rotate(202deg) brightness(97%) contrast(96%);
+    }
+}
+
+/* 手機版使用 header區域 */
+@media (max-width: 767.98px) {
+    .app-header {
+        --icon-size: 118px;
+        /* 手機版 icon 大小 */
+        padding: 20px 22px;
+        margin: 22px 0px;
+        background: #fff;
+
+        .container-fluid {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .app-icon {
+        width: var(--icon-size);
+        height: var(--icon-size);
+        border-radius: 20px;
+        /* App Store 圓角 */
+        object-fit: cover;
+        display: block;
+    }
+
+    .app-title {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 2px;
+        white-space: normal;
+    }
+
+    .app-subtitle {
+        font-size: 14px;
+        line-height: 1;
+        color: #8e8e93;
+    }
+
+    .app-cta {
+        align-items: center;
+        background: #007afe;
+        border-radius: 28px;
+        color: #fff;
+        display: flex;
+        font-size: 15px;
+        justify-content: center;
+        padding: 5px 15px;
+        width: 67.1px;
+        height: 32.5px;
+    }
+
+    .app-share {
+        background: transparent;
+        border: 0;
+        line-height: 0;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .share-icon {
+        width: 28px;
+        height: 28px;
+        display: block;
+    }
+
+
+    .app-header .ms-auto {
+        margin-left: auto;
+    }
+
+}
+
+
+//   Icon評分專區
+@media (max-width: 767.98px) {
+    .app-info {
+        font-size: 14px;
+
+        .app-info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .small {
+            font-size: 13px;
+            color: #8e8e93;
+        }
+
+        .fw-bold {
+            color: #333;
+        }
+
+        .stars {
+            font-size: 14px;
+            letter-spacing: 1px;
+            color: #8e8e93;
+            margin-top: 2px;
+        }
+
+        .icon img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
+
+//   評論區
+
+@media (max-width: 767.98px) {
+    .app-desc {
+        font-size: 14px;
+        line-height: 1.4;
+
+        p {
+            font-size: 14px;
+            color: #000;
+        }
+
+        .see-more {
+            font-size: 14px;
+            color: #007aff;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .dev-link {
+            font-size: 15px;
+            color: #007aff;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .dev-role {
+            font-size: 13px;
+            color: #8e8e93;
+        }
+
+        .chevron {
+            width: 18px;
+            height: 18px;
+            opacity: 0.6;
+        }
+    }
+}
+
+//   評分區
+@media (max-width: 767.98px) {
+    .app-ratings {
+        background: #fff;
+        padding: 16px 20px;
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .app-ratings .section-title {
+        font-weight: 800;
+        font-size: 22px;
+        line-height: 1.2;
+    }
+
+    .app-ratings .see-all {
+        color: #007aff;
+        text-decoration: none;
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+    .rating-big {
+        font-size: 64px;
+        font-weight: 800;
+        line-height: 1;
+    }
+
+    .rating-sub {
+        margin-top: 8px;
+        color: #8e8e93;
+        font-size: 16px;
+    }
+
+    .rating-histo .h-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+
+    .rating-histo .stars {
+        width: 82px;
+        /* 固定寬，對齊長條 */
+        font-size: 14px;
+        letter-spacing: 1px;
+        color: #8e8e93;
+        text-align: left;
+        flex: 0 0 auto;
+    }
+
+    .rating-histo .bar {
+        position: relative;
+        flex: 1 1 auto;
+        height: 4px;
+        background: #eee;
+        border-radius: 2px;
+        overflow: hidden;
+    }
+
+    .rating-histo .bar>span {
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 0;
+        background: #8f8f8f;
+        /* 深灰色進度條 */
+        border-radius: 2px;
+        display: block;
+    }
+
+    .rating-count {
+        color: #8e8e93;
+        font-size: 16px;
+    }
+}
+
+//   單一用戶評論
+@media (max-width: 767.98px) {
+    .review-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        padding: 16px;
+        margin: 12px 16px;
+    }
+
+    .review-user {
+        font-weight: 700;
+        font-size: 15px;
+    }
+
+    .stars {
+        font-size: 14px;
+        color: #ff9500;
+        /* iOS 的橘色星等 */
+        letter-spacing: 1px;
+        line-height: 1;
+    }
+
+    .review-date {
+        font-size: 13px;
+        color: #8e8e93;
+    }
+
+    .review-text {
+        font-size: 14px;
+        line-height: 1.4;
+        color: #000;
+        flex: 1;
+    }
+
+    .see-more {
+        font-size: 14px;
+        color: #007aff;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+}
+
+
+// APP隱私說明區塊
+@media (max-width: 767.98px) {
+    .privacy-header {
+        background: #fff;
+        padding: 16px 20px;
+
+        h5 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .see-more {
+            font-size: 14px;
+            color: #007aff;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .desc {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333;
+
+            a {
+                color: #007aff;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .privacy-card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        padding: 20px;
+        margin-top: 16px;
+
+        h6 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 13px;
+            line-height: 1.4;
+            color: #666;
+        }
+
+        .privacy-item {
+            font-size: 14px;
+            font-weight: 500;
+            color: #000;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+    }
+}
+
+// 內部卡片相容
+@media (max-width: 767.98px) {
+
+    /* 卡片共用：沿用你前面的 .privacy-card 設定，這裡補間距與列表排版 */
+    .privacy-card {
+        margin-top: 16px;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
+        /* 比前一張圖更柔的陰影 */
+    }
+
+    /* 橫向列表（卡片#1、#2） */
+    .privacy-list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px 28px;
+        margin-top: 12px;
+    }
+
+    /* 2×2 網格（卡片#3） */
+    .privacy-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 28px;
+        row-gap: 14px;
+        justify-items: start;
+        margin-top: 12px;
+        padding: 0 6px;
+        /* 讓左右視覺更舒適 */
+    }
+
+    .privacy-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #111;
+        white-space: nowrap;
+    }
+
+    /* 若用 Bootstrap Icons，可讓 icon 視覺更接近 iOS */
+    .privacy-item i {
+        font-size: 18px;
+        color: #111;
+        opacity: .9;
+    }
+
+    /* 卡片上方 icon 可加藍色調（選用） */
+    .privacy-card .icon img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* 最下方補充說明 */
+    .privacy-note {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #333;
+        margin: 16px 20px 0;
+
+        a {
+            color: #007aff;
+            /* 藍色超連結 */
+            text-decoration: none;
+        }
+    }
+
+
+    // 內容最底資訊
+    @media (max-width: 767.98px) {
+        .info-section {
+            background: #fff;
+            padding: 16px 20px;
+            margin-top: 16px;
+        }
+
+        .info-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #000;
+        }
+
+        .info-item {
+            margin-bottom: 16px;
+
+            .label {
+                display: block;
+                font-size: 14px;
+                color: #8e8e93;
+                /* 灰色小標題 */
+                margin-bottom: 2px;
+            }
+
+            .value {
+                font-size: 14px;
+                color: #000;
+                /* 黑色內容 */
+            }
+        }
+
+        .contact-link {
+            font-size: 14px;
+            color: #6064684d;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 8px;
+        }
+    }
+
+    // 黑幕  CSS
+    /* === Install Overlay (mobile only) === */
+    @media (max-width: 767.98px) {
+
+        /* 黑幕 */
+        .install-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .65);
+            z-index: 1080;
+            display: none;
+            /* 進站用 JS 加 .show 開啟 */
+        }
+
+        .install-overlay.show {
+            display: block;
+        }
+
+        /* 白色卡片 */
+        .install-sheet {
+            box-sizing: border-box;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: calc(100% - 32px);
+            width: 85%;
+            background: #fff;
+            border-radius: 28px;
+            box-shadow: 0 24px 70px rgba(0, 0, 0, .25);
+            padding: 36px 16px 22px;
+            overflow: visible;
+            background: #efefef;
+        }
+
+        .sheet-title {
+            font-size: 20px;
+            font-weight: 800;
+            text-align: center;
+            line-height: 30px;
+            margin-bottom: 26px;
+        }
+
+        /* 上方圖片（步驟1）可保留你自己的 class */
+        .guide-top {
+            display: block;
+            width: 100%;
+            border-radius: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* ===== 列表樣式 ===== */
+        .sheet-list-top {
+            list-style: none;
+            padding: 12px 14px;
+            background: #fff;
+            border-radius: 9px;
+            box-shadow: 0 1px 0 #eaeaea inset, 0 -1px 0 #eaeaea inset;
+            margin-bottom: 10px;
+        }
+
+        .sheet-item-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            // padding: 12px 14px;
+            font-size: 15px;
+            line-height: 0.3;
+            background: #fff;
+            border-bottom: 1px solid #ececec;
+        }
+
+        .sheet-item-top:last-child {
+            border-bottom: 0;
+        }
+
+        .sheet-item-top span:last-child {
+            color: #8e8e93;
+            /* 右側小圖示（你現在用 emoji） */
+            flex: 0 0 auto;
+        }
+
+
+
+        .sheet-list {
+            list-style: none;
+            padding: 8px 0;
+            background: #fff;
+            border-radius: 9px;
+            box-shadow: 0 1px 0 #eaeaea inset, 0 -1px 0 #eaeaea inset;
+        }
+
+        .sheet-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 14px;
+            font-size: 15px;
+            line-height: 1.5;
+            background: #fff;
+            border-bottom: 1px solid #ececec;
+        }
+
+        .sheet-item:last-child {
+            border-bottom: 0;
+        }
+
+        .sheet-item span:last-child {
+            color: #8e8e93;
+            /* 右側小圖示（你現在用 emoji） */
+            flex: 0 0 auto;
+        }
+
+        /* CTA 列（步驟2：紅框高亮） */
+        .sheet-item.is-cta {
+            border: 2px solid #ff3b30;
+            border-radius: 9px;
+            background: #fff;
+        }
+
+        /* ===== 藍色步驟徽章 ===== */
+        .step1-anchor,
+        .step2-anchor {
+            position: relative;
+        }
+
+        .step-badge {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #007aff;
+            color: #fff;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 32px;
+            padding: 0px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+            z-index: 5;
+            box-sizing: border-box;
+        }
+
+        /* 依實際畫面調整數值 */
+        .step1-badge {
+            top: 64px;
+        }
+
+        /* 貼著上方紅圈下緣 */
+        .step2-badge {
+            top: -20px;
+        }
+
+        /* 貼著紅框上緣 */
+
+        /* ===== 手指 GIF（交替顯示，上→下循環） ===== */
+        .hand {
+            position: absolute;
+            width: 100px;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 6;
+            /* 高於徽章 */
+        }
+
+        @keyframes handTop {
+
+            0%,
+            45% {
+                opacity: 1
+            }
+
+            55%,
+            100% {
+                opacity: 0
+            }
+        }
+
+        @keyframes handBottom {
+
+            0%,
+            45% {
+                opacity: 0
+            }
+
+            55%,
+            100% {
+                opacity: 1
+            }
+        }
+
+        .hand-top {
+            animation: handTop 4s linear infinite;
+        }
+
+        .hand-bottom {
+            animation: handBottom 4s linear infinite;
+        }
+    }
+
+
+}
+/* 僅隱藏 hidden 的 overlay（共用 OK） */
+.install-overlay[hidden] { display: none !important; }
+
+@media (max-width: 767.98px) {
+  /* ===== iOS 專用 ===== */
+  #overlay-ios {
+    position: fixed; inset: 0; background: rgba(0,0,0,.65);
+    z-index: 1080; display: none;
+    &.show { display: block; }
+
+    /* 右上角虛線箭頭（固定在視口右上角） */
+    .ios-guide {
+      position: absolute; right: 8px; top: 8px;
+      width: 147px ;
+       pointer-events: none; z-index: 3;
+    }
+
+    /* 白卡容器（置中偏上） */
+    .install-sheet.ios-sheet{
+      position: absolute; left: 50%; top: 35%;
+      transform: translate(-50%, -50%);
+      width: 92%;
+      background: transparent; box-shadow: none; padding: 0;
+    }
+
+    /* ===== 上方泡泡（步驟 1） ===== */
+    .ios-bubble{
+      position: relative;
+      margin: 0px auto 53px;
+      width: calc(100% - 3px);
+      background: #fff; border-radius: 22px;
+      padding: 26px 26px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.18);
+      .bubble-text{ font-size: 19px; font-weight: 800; color: #111; line-height: 30px; }
+      .ios-ellipsis-img{
+        position: absolute; right: 20px; top: 50%;
+        transform: translateY(-50%); width: 45px; height: 45px; opacity: .9;
+      }
+    }
+
+    /* 藍色步驟徽章（只在 iOS 用） */
+    .step1-anchor, .step2-anchor { position: relative; }
+    .step1-badge{ top: -16px; }   /* 貼泡泡上緣 */
+    .step2-badge{ top: -18px; }   /* 貼紅框上緣 */
+
+    /* ===== 下方整張白卡（row-top / footer + 紅框列） ===== */
+    .ios-bottom-card{
+      background: #fff; border-radius: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,.25);
+      overflow: hidden;           /* 讓上下 row 圖吃到圓角 */
+      margin-top: 16px;
+    }
+    .ios-bottom-box{padding: 16px 16px;}
+
+    .ios-row{ display: block; width: 100%; }
+    .ios-bottom-inner{ padding: 0px 16px }
+
+    .ios-row-top , .ios-row-bottom{
+        max-width: 207px;
+        padding-left: 20px;
+    }
+    /* 紅框目標列本體 */
+    .focus-row{
+      position: relative;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      background: #fff; border-radius: 16px;
+      padding: 14px; box-shadow: inset 0 0 0 3px #ff3b30;
+    }
+    .left{ display: flex; align-items: center; gap: 12px; }
+    .icon-bubble{
+      width: 24px; height: 24px; border-radius: 12px;
+      display: inline-flex; align-items: center; justify-content: center;
+      .icon{ width: 22px; height: 22px; display: block; }
+    }
+    .label{ font-size: 14px; font-weight: 800; color: #111; }
+
+    /* ===== 手指 GIF：交替顯示 ===== */
+    .hand{ position: absolute; 
+        width: 100px; 
+        pointer-events: none; 
+        opacity: 0; z-index: 6;
+        top: -100px;
+        right: 30px;
+    }
+    @keyframes iosHandTop    { 0%,45%{opacity:1} 55%,100%{opacity:0} }
+    @keyframes iosHandBottom { 0%,45%{opacity:0} 55%,100%{opacity:1} }
+    .hand-top{ animation: iosHandTop 4s linear infinite; }
+    .hand-bottom{ animation: iosHandBottom 4s linear infinite; }
+  }
+
+
+
+
+
+  /* ===== Android 專用（把你原本的 .install-sheet 手機樣式改到這個 scope 底下） ===== */
+  #overlay-android {
+    /* 黑幕 */
+    position: fixed; inset: 0; background: rgba(0,0,0,.65);
+    z-index: 1080; display: none;
+    &.show{ display:block; }
+
+    /* 這裡放你原本 Android 的 .install-sheet / .sheet-list ...  */
+    .install-sheet{
+      box-sizing: border-box;
+      position: absolute; left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      width: 85%; background: #efefef; border-radius: 28px;
+      box-shadow: 0 24px 70px rgba(0,0,0,.25);
+      padding: 36px 16px 22px; overflow: visible;
+    }
+
+    .android-guide{
+        position: absolute;
+        left: 12px;                /* 例：固定在左上角或你要的位置 */
+        top: 12px;
+        width: 140px;
+        pointer-events: none;
+        z-index: 3;
+      }
+
+    /* 其餘 Android 樣式（sheet-list、item、徽章、手指動畫…）維持你原本設定 */
+  }
+}
