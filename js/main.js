@@ -1,4 +1,4 @@
-// /js/main.js — 強制反轉 overlay + 動態 manifest + Info
+// /js/main.js — 反轉 overlay + 動態 manifest + Info（修正版）
 document.addEventListener('DOMContentLoaded', () => {
   const $  = (s, r=document) => r.querySelector(s);
   const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
@@ -19,9 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── 平台偵測
   const ua = navigator.userAgent || '';
-  const isAndroid   = /Android/i.test(ua);
-  const isIOS       = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const isAndroid    = /Android/i.test(ua);
+  const isIOS        = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   const isStandalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+  const isDesktop    = window.matchMedia('(min-width: 768px)').matches;
 
   // ── 動態掛 manifest
   (function attachManifestLink(code){
@@ -33,34 +34,31 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(link);
   })(channelCode);
 
-  // ── 反轉規則：偵測 Android → 用 iOS overlay；偵測 iOS → 用 Android overlay
-  const useIOSOverlay = isAndroid;
+  // ── 反轉規則
+  // 桌機 or Android → 用 iOS overlay；iOS → 用 Android overlay
+  const useIOSOverlay = isAndroid || isDesktop;
 
   // 先取兩個 overlay
-  const iosEl  = document.getElementById('overlay-ios');
-  const andEl  = document.getElementById('overlay-android');
+  const iosEl = document.getElementById('overlay-ios');
+  const andEl = document.getElementById('overlay-android');
 
-  // 【關鍵 1】先把兩個 overlay 統一清成關閉狀態，避免其它腳本殘留
+  // 【關鍵 1】進場：兩個 overlay 都先重置為關閉狀態（顯示完全由 .show 控制）
   [iosEl, andEl].forEach(el => {
     if (!el) return;
     el.classList.remove('show');
     el.setAttribute('aria-hidden', 'true');
-    el.removeAttribute('hidden');     // 讓顯示全由 .show 控制（CSS 有 .install-overlay{display:none} & .show{display:block}）
+    el.removeAttribute('hidden');
   });
 
-  // 這一輪要使用的 overlay（已反轉）
+  // 這一輪實際使用的（已反轉）
   const overlay = useIOSOverlay ? iosEl : andEl;
   const other   = useIOSOverlay ? andEl : iosEl;
 
-  // console.log('[Overlay Switch]',
-  //   { isIOS, isAndroid, useIOSOverlay, chosen: overlay?.id, other: other?.id, isStandalone }
-  // );
-
-  // 【關鍵 2】另一個 overlay 直接「硬禁止」
+  // 【關鍵 2】另一個 overlay 直接禁用
   if (other) {
     other.classList.remove('show');
     other.setAttribute('aria-hidden', 'true');
-    other.setAttribute('data-disabled-by-main', '1'); // 標記，方便查問題
+    other.setAttribute('data-disabled-by-main', '1');
   }
 
   function initOverlay(el, offsets){
@@ -72,33 +70,73 @@ document.addEventListener('DOMContentLoaded', () => {
     const b1      = el.querySelector('.step1-badge');
     const b2      = el.querySelector('.step2-badge');
 
-    // ✅ 新增：桌機判斷 & 關閉記錄
-  const isDesktop = window.matchMedia('(min-width: 768px)').matches;
-  const DISMISS_KEY = 'overlayDismissed';
-  const wasDismissed = localStorage.getItem(DISMISS_KEY) === '1'
+  // ✅ 桌機→sessionStorage、手機→localStorage（避免手機切裝置吃到桌機紀錄）
+  const STORE = isDesktop ? sessionStorage : localStorage;
+  const DISMISS_KEY = 'overlayDismissed:v1';
 
+  const wasDismissed   = STORE.getItem(DISMISS_KEY) === '1';
+  const shouldSuppress = wasDismissed; // 桌機用 sessionStorage，所以重開瀏覽器就不會抑制
+
+  // 手機避免吃到桌機紀錄（保留你原本邏輯）
+  if (!isDesktop && localStorage.getItem(DISMISS_KEY) === '1' && STORE !== localStorage) {
+    localStorage.removeItem(DISMISS_KEY);
+  }
     let visible = false;
     let justClosedAt = 0;
     const REOPEN_DELAY = 80;
 
-    const open  = () => { el.classList.add('show'); el.setAttribute('aria-hidden','false'); visible = true; };
-    const close = () => { el.classList.remove('show'); el.setAttribute('aria-hidden','true');  visible = false; justClosedAt = performance.now(); };
+    // 支援 force 參數：手動開啟不受 shouldSuppress 限制
+    const open = (force = false) => {
+      if (!force && shouldSuppress) return;
+      el.classList.add('show');
+      el.removeAttribute('hidden');
+      el.setAttribute('aria-hidden','false');
+      visible = true;
+      // console.log('[Overlay] open()', { force, shouldSuppress });
+    };
 
-    // 初次顯示（未安裝）
-    if (!isStandalone) open();
+    const close = () => {
+      // console.log('[Overlay] 關閉 overlay');
+      el.classList.remove('show');
+      el.setAttribute('aria-hidden','true');
+      el.setAttribute('hidden','');
+      visible = false;
+      justClosedAt = performance.now();
+      if (isDesktop) localStorage.setItem(DISMISS_KEY, '1');
+    };
 
-    el.addEventListener('pointerup', (e) => { if (e.target === el){ e.stopPropagation(); close(); } });
+    // 點黑幕關閉（點到 overlay 本體才關）
+    el.addEventListener('pointerup', (e) => {
+      if (e.target === el){
+        e.stopPropagation();
+        close();
+      }
+    });
+
+    // 點白卡不關閉
     if (sheet) sheet.addEventListener('pointerup', (e) => e.stopPropagation());
 
-    const reopen = (e) => {
+    // 初次顯示（未安裝）：自動開只看 shouldSuppress
+    if (!isStandalone && !shouldSuppress) open();
+
+    // 手動重新開啟（點頁面空白處）
+    const tryReopen = (src) => {
       if (visible) return;
       if (performance.now() - justClosedAt < REOPEN_DELAY) return;
-      if (el.contains(e.target)) return;
       if (isStandalone) return;
-      open(); relayout();
+      open(true);   // 強制開啟
+      relayout();
     };
-    document.addEventListener('pointerup', reopen, true);
 
+    document.addEventListener('pointerup', (e) => {
+      if (el.contains(e.target)) return; // 點在 overlay 內的元素，不觸發重開
+      tryReopen('document');
+    }, true);
+
+    // 也提供一個全域方法給 Console/CTA 呼叫
+    window.reopenOverlay = () => open(true);
+
+    // 對齊動畫手指
     const centerHandOn = (hand, badge, dy=0, dx=0) => {
       if (!hand || !badge || !sheet) return;
       const s = sheet.getBoundingClientRect();
@@ -123,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
       : { top:{dy:20,dx:30},  bottom:{dy:40,dx:-40} }    // Android 規格偏移（現在用在 iOS 裝置）
   );
 
-  // iOS 教學輪播：只有在「使用 iOS overlay」時啟動（也就是偵測到 Android）
+  // iOS 教學輪播：只有在「使用 iOS overlay」時啟動（也就是偵測到 Android 或桌機）
   (function rotateIOSGuides(){
     if (!useIOSOverlay) return;
     const el = iosEl;
@@ -155,7 +193,8 @@ document.addEventListener('DOMContentLoaded', () => {
           await deferredPrompt.userChoice;
           deferredPrompt = null;
         } else {
-          overlay && overlay.classList.add('show');
+          // 統一走強制開
+          window.reopenOverlay && window.reopenOverlay();
         }
       };
     }
@@ -164,17 +203,18 @@ document.addEventListener('DOMContentLoaded', () => {
   if (ctaBtn) {
     ctaBtn.addEventListener('click', () => {
       if (isStandalone) return;
-      if (!deferredPrompt) overlay && overlay.classList.add('show');
+      if (!deferredPrompt) {
+        window.reopenOverlay && window.reopenOverlay();
+      }
     });
   }
 
   window.addEventListener('appinstalled', () => {
     fetch(API.install(channelCode)).catch(()=>{});
     overlay && overlay.classList.remove('show');
-    // console.log('PWA installed');
   });
 
-  // ── Info API：以下與你原版相同（略過不動） ─────────────────────────
+  // ── Info API（照你原版）
   const els = {
     appIcon:   $('.app-header .app-icon'),
     appTitle:  $('.app-header .app-title'),

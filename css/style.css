@@ -13188,7 +13188,7 @@ textarea.form-control-lg {
   #overlay-ios .install-sheet.ios-sheet {
     position: absolute;
     left: 50%;
-    top: 35%;
+    top: 38%;
     transform: translate(-50%, -50%);
     width: 92%;
     background: transparent;
@@ -13197,7 +13197,7 @@ textarea.form-control-lg {
   }
   #overlay-ios .ios-bubble {
     position: relative;
-    margin: 0px auto 53px;
+    margin: 0px auto 10px;
     width: calc(100% - 3px);
     background: #fff;
     border-radius: 22px;
@@ -13354,43 +13354,27 @@ textarea.form-control-lg {
     z-index: 3;
   }
 }
-/* ===== Desktop (md+) 顯示 iOS 黑幕，關閉 Android ===== */
-@media (min-width: 768px) {
-  #overlay-ios {
-    display: block !important;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.75);
-    z-index: 1080;
-  }
-  #overlay-ios.show {
-    display: block;
-  }
-  #overlay-android {
-    display: none !important;
-  }
-}
-/* 僅隱藏 hidden 的 overlay（共用 OK） */
-.install-overlay[hidden] {
-  display: none !important;
-}
-
-/* 電腦版黑幕（修正版，md+） */
+/* 電腦版黑幕（，md+） */
 @media (min-width: 768px) {
   /* 強制顯示 iOS overlay（即使 HTML 上有 hidden） */
-  #overlay-ios,
-  #overlay-ios[hidden] {
-    display: flex !important; /* 置中用 flex */
-    align-items: center;
-    justify-content: center;
+  #overlay-ios {
+    display: none;
     position: fixed;
     inset: 0;
     z-index: 1080;
-    background: rgba(0, 0, 0, 0.65); /* 黑幕 */
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.65);
+  }
+  #overlay-ios.show {
+    display: flex;
+  }
+  #overlay-ios[hidden] {
+    display: none !important;
   }
   /* 關閉 Android overlay */
   #overlay-android {
-    display: none !important;
+    display: none;
   }
   /* 右上角虛線箭頭 */
   #overlay-ios .ios-guide {
@@ -13545,18 +13529,43 @@ textarea.form-control-lg {
   /* 手指：在白卡右下角，做輕微晃動 */
   #overlay-ios .hand {
     position: absolute;
-    right: 48px;
-    bottom: 36px;
+    right: 140px;
+    top: -100px;
     width: 92px;
     pointer-events: none;
     opacity: 0.95;
     animation: handNod 2.2s ease-in-out infinite alternate;
   }
-  #overlay-ios .hand-top {
+  #overlay-ios .hand-top,
+  #overlay-ios .hand-bottom {
     display: block;
   }
+  #overlay-ios .hand-top,
   #overlay-ios .hand-bottom {
-    display: none;
+    display: block;
+    opacity: 0;
+  }
+  @keyframes deskHandTop {
+    0%, 45% {
+      opacity: 1;
+    }
+    55%, 100% {
+      opacity: 0;
+    }
+  }
+  @keyframes deskHandBottom {
+    0%, 45% {
+      opacity: 0;
+    }
+    55%, 100% {
+      opacity: 1;
+    }
+  }
+  #overlay-ios .hand-top {
+    animation: deskHandTop 4s linear infinite;
+  }
+  #overlay-ios .hand-bottom {
+    animation: deskHandBottom 4s linear infinite;
   }
   @keyframes handNod {
     from {
