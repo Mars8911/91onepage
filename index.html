@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="/css/style.css">
+
 </head>
 
 <body>
-    <section class="app-section d-block d-md-none">
+    <section class="app-section d-block container">
         <!-- App Header -->
-        <div class="app-header d-block d-md-none bg-white ">
-            <div class="container-fluid d-flex align-items-end p-0">
+        <div class="app-header d-block  bg-white ">
+            <div class=" d-flex align-items-end p-0">
                 <!-- 左：App Icon + 名稱 + 開發商 -->
                 <div class="d-flex">
                     <img src="/images/app-icon.png" alt="Luck8" class="app-icon me-3">
@@ -37,14 +38,14 @@
         </div>
 
         <!-- Info Section -->
-        <div class="app-info d-block d-md-none bg-white border-top border-bottom py-3 mx-3 my-3">
+        <div class="app-info d-block bg-white border-top border-bottom py-3 mx-3 my-3">
             <div class="container-fluid">
-                <div class="row text-center">
+                <div class="row text-center align-items-center">
                     <!-- 評分 -->
                     <div class="col-4 app-info-item border-end">
                         <div class="small text-muted">4K đánh giá</div>
-                        <div class="fw-bold fs-5">4.9</div>
-                        <div class="stars">★★★★★</div>
+                        <div class="fw-bold fs-5 text-muted">4.9</div>
+                        <div class="stars text-muted">★★★★★</div>
                     </div>
 
                     <!-- 年齡 / 編輯精選 -->
@@ -84,19 +85,19 @@
         </div>
 
         <!-- App 描述區域 -->
-        <div class="app-desc d-block d-md-none bg-white border-top border-bottom py-3 mx-3 my-3">
+        <div class="app-desc d-block  bg-white border-top border-bottom py-3 mx-3 my-3">
             <div class="container-fluid">
                 <!-- 描述 + Xem thêm -->
                 <div class="d-flex justify-content-between align-items-start mb-3">
-                    <p class="mb-0 text-truncate flex-grow-1">
-                        Tại đây có đầy đủ tất cả các game hiện hành, với nhiều ưu đãi cực hấp dẫn, đội ngũ nhân viên kỹ
-                        thuật có mặt mọi lúc...
+                    <p class="mb-0 text-sm-truncate flex-grow-1">
+                        Tại đây có đầy đủ tất cả các game hiện hành, với nhiều ưu đãi cực hấp dẫn, đội ngũ nhân viên kỹ thuật có mặt mọi lúc và công nghệ bảo mật tiên tiến, đảm bảo thông tin cá nhân và quỹ tiền trong tài khoản an toàn tuyệt đối. Tối ưu máy chủ độc quyền, đem lại trải nghiệm trò chơi ưu việt.
+                        <a href="#" class="see-more ms-2">Xem thêm</a>
                     </p>
-                    <a href="#" class="see-more ms-2">Xem thêm</a>
+                   
                 </div>
 
                 <!-- 開發商資訊 -->
-                <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center ">
                     <div>
                         <a href="#" class="dev-link d-block">Luck8</a>
                         <span class="dev-role">Nhà phát triển</span>
@@ -109,7 +110,7 @@
         </div>
 
         <!-- 評分區域 -->
-        <div class="app-ratings d-block d-md-none mx-3">
+        <div class="app-ratings d-block  mx-3">
             <div class="container-fluid">
 
                 <!-- 標題列 -->
@@ -159,7 +160,7 @@
         </div>
 
         <!-- 單一用戶評論 -->
-        <div class="review-card d-block d-md-none">
+        <div class="review-card d-block ">
             <div class="card-body">
                 <!-- 用戶名 -->
                 <h6 class="review-user mb-1">Trung Tín</h6>
@@ -180,8 +181,10 @@
             </div>
         </div>
 
+      
+
         <!-- APP 隱私說明區塊 -->
-        <div class="privacy-header d-block d-md-none">
+        <div class="privacy-header d-block ">
             <!-- 標題 + link -->
             <div class="d-flex  align-items-center mb-2">
                 <h5 class="fw-bold mb-0">Quyền riêng tư của ứng dụng</h5>
@@ -197,7 +200,7 @@
 
             <!-- 卡片 -->
             <div class="privacy-card">
-                <div class="icon text-center mb-2">
+                <div class="icon text-center pb-2">
                     <img src="/images/track-icon.png" alt="track" width="32">
                 </div>
                 <h6 class="fw-bold text-center">Dữ liệu dùng để theo dõi bạn</h6>
@@ -205,7 +208,7 @@
                     Các dữ liệu sau có thể được dùng để theo dõi bạn trên các ứng dụng
                     và trang web thuộc sở hữu của các công ty khác:
                 </p>
-                <div class="d-flex justify-content-start flex-wrap gap-5 mt-3">
+                <div class="d-flex justify-content-between flex-wrap gap-5 mt-3">
                     <span class="privacy-item">
                         <img src="/images/icon-1.png" alt="" width="20">
                         Nhận dạng
@@ -218,7 +221,7 @@
 
             <!-- 卡片 #2 -->
             <div class="privacy-card">
-                <div class="icon text-center mb-2">
+                <div class="icon text-center pb-2">
                     <img src="/images/unlink-icon.png" alt="unlink" width="32">
                 </div>
                 <h6 class="fw-bold text-center">Dữ liệu liên kết với bạn</h6>
@@ -226,7 +229,7 @@
                     Nhà phát triển có thể thu thập các dữ liệu sau và dữ liệu này được liên kết
                     với danh tính của bạn:
                 </p>
-                <div class="d-flex justify-content-start flex-wrap gap-5 mt-3">
+                <div class="d-flex justify-content-between flex-wrap gap-5 mt-3">
                     <span class="privacy-item">
                         <img src="/images/icon-1.png" alt="" width="20">
                         Nhận dạng</span>
@@ -245,9 +248,7 @@
                 <p class="text-muted small text-center">
                     Nhà phát triển có thể thu thập các dữ liệu sau nhưng không liên kết với danh tính của bạn:
                 </p>
-
-                <!-- 2×2 排列 -->
-                <div class="privacy-grid">
+                <div class="privacy-grid ">
                     <span class="privacy-item">
                         <img src="/images/icon-3.png" alt="unlink" width="20">
                         Thông tin liên hệ</span>
@@ -268,7 +269,7 @@
         </div>
 
         <!-- 內容最底資訊 -->
-        <div class="info-section d-block d-md-none">
+        <div class="info-section d-block ">
             <h4 class="info-title">Information</h4>
 
             <div class="info-item">
@@ -406,7 +407,11 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/ui.js"></script>
     <script src="/js/main.js"></script>
+    
 </body>
 
 </html>

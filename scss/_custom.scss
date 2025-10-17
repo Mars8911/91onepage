@@ -1,109 +1,215 @@
-.app-section {
-    background: #f8f9fa;
-    min-height: 100vh;
-    padding-bottom: 60px; // 預留 icon bar 高度
-}
-
-.app-carousel {
-    padding: 0 12px;
-    margin-bottom: 1rem;
-
-    .carousel-item {
-        flex: 0 0 auto;
-        width: 70%; // 手機每次顯示大約 70%
+// 手機版設定
+@media (max-width: 767.98px) {
+    .app-section {
+        background: #f8f9fa;
+        min-height: 100vh;
+        padding-bottom: 60px; // 預留 icon bar 高度
     }
 
-    img {
+    .app-carousel {
+        padding: 0 12px;
+        margin-bottom: 1rem;
+
+        .carousel-item {
+            flex: 0 0 auto;
+            width: 70%; // 手機每次顯示大約 70%
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    .app-navbar {
+        .icon {
+            width: 24px;
+            height: 24px;
+            display: block;
+            margin: 0 auto 4px;
+        }
+
+        .small {
+            font-size: 12px;
+            color: #555;
+        }
+    }
+
+    .app-section {
+        background: #f8f9fa;
+        min-height: 100vh;
+        padding-bottom: 64px;
+    }
+
+    /* 預留底部固定列高度 */
+
+    .app-scroll {
+        padding: 0 12px;
+        margin-bottom: 1rem;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    }
+
+    .app-scroll .d-flex {
+        gap: .5rem;
+    }
+
+    .app-card {
+        flex: 0 0 60%;
+        /* 每張卡片佔 50% 螢幕寬 */
+        scroll-snap-align: start;
+    }
+
+    .app-card img {
+        border-radius: 12px;
+        /* 圓角小一點比較像 App Store */
         width: 100%;
         height: auto;
         object-fit: cover;
     }
-}
 
-.app-navbar {
-    .icon {
+    .app-navbar .icon {
         width: 24px;
         height: 24px;
         display: block;
         margin: 0 auto 4px;
     }
 
-    .small {
+    .app-navbar .small {
         font-size: 12px;
         color: #555;
     }
-}
 
-.app-section {
-    background: #f8f9fa;
-    min-height: 100vh;
-    padding-bottom: 64px;
-}
+    .app-header {
+        .app-icon {
+            width: 118px;
+            height: 118px;
+            border-radius: 14px; // App Store icon 樣式
+            object-fit: cover;
+        }
 
-/* 預留底部固定列高度 */
+        h6 {
+            font-size: 1rem;
+        }
 
-.app-scroll {
-    padding: 0 12px;
-    margin-bottom: 1rem;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-}
+        .btn {
+            border-radius: 20px; // App Store 按鈕圓角
+            font-weight: 600;
+        }
 
-.app-scroll .d-flex {
-    gap: .5rem;
-}
-
-.app-card {
-    flex: 0 0 60%;
-    /* 每張卡片佔 50% 螢幕寬 */
-    scroll-snap-align: start;
-}
-
-.app-card img {
-    border-radius: 12px;
-    /* 圓角小一點比較像 App Store */
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+        .share-btn img {
+            filter: invert(34%) sepia(80%) saturate(1998%) hue-rotate(202deg) brightness(97%) contrast(96%);
+        }
+    }
 }
 
 
-.app-navbar .icon {
-    width: 24px;
-    height: 24px;
-    display: block;
-    margin: 0 auto 4px;
-}
+// 電腦版設定
+@media (min-width: 768px) {
+    .app-section {
+        background: white;
+        max-width: 750px;
+        padding-bottom: 60px;
+        padding-top: 60px; // 預留 icon bar 高度
+    }
 
-.app-navbar .small {
-    font-size: 12px;
-    color: #555;
-}
+    .app-carousel {
+        padding: 0 12px;
+        margin-bottom: 1rem;
+
+        .carousel-item {
+            flex: 0 0 auto;
+            width: 30%; // 手機每次顯示大約 70%
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    .app-navbar {
+        .icon {
+            width: 24px;
+            height: 24px;
+            display: block;
+            margin: 0 auto 4px;
+        }
+
+        .small {
+            font-size: 12px;
+            color: #555;
+        }
+    }
 
 
-.app-header {
-    .app-icon {
-        width: 118px;
-        height: 118px;
-        border-radius: 14px; // App Store icon 樣式
+    /* 預留底部固定列高度 */
+
+    .app-scroll {
+        padding: 0 12px;
+        margin-bottom: 1rem;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    }
+
+    .app-scroll .d-flex {
+        gap: .5rem;
+    }
+
+    .app-card {
+        flex: 0 0 30%;
+        /* 每張卡片佔 50% 螢幕寬 */
+        scroll-snap-align: start;
+    }
+
+    .app-card img {
+        border-radius: 12px;
+        /* 圓角小一點比較像 App Store */
+        width: 100%;
+        height: auto;
         object-fit: cover;
     }
 
-    h6 {
-        font-size: 1rem;
+    .app-navbar .icon {
+        width: 24px;
+        height: 24px;
+        display: block;
+        margin: 0 auto 4px;
     }
 
-    .btn {
-        border-radius: 20px; // App Store 按鈕圓角
-        font-weight: 600;
+    .app-navbar .small {
+        font-size: 12px;
+        color: #555;
     }
 
-    .share-btn img {
-        filter: invert(34%) sepia(80%) saturate(1998%) hue-rotate(202deg) brightness(97%) contrast(96%);
+    .app-header {
+        .app-icon {
+            width: 118px;
+            height: 118px;
+            border-radius: 14px; // App Store icon 樣式
+            object-fit: cover;
+        }
+
+        h6 {
+            font-size: 1rem;
+        }
+
+        .btn {
+            border-radius: 20px; // App Store 按鈕圓角
+            font-weight: 600;
+        }
+
+        .share-btn img {
+            filter: invert(34%) sepia(80%) saturate(1998%) hue-rotate(202deg) brightness(97%) contrast(96%);
+        }
     }
 }
 
-/* 手機版使用 header區域 */
+
+
+//手機版使用 header區域 
 @media (max-width: 767.98px) {
     .app-header {
         --icon-size: 118px;
@@ -129,6 +235,80 @@
 
     .app-title {
         font-size: 20px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 2px;
+        white-space: normal;
+    }
+
+    .app-subtitle {
+        font-size: 14px;
+        line-height: 1;
+        color: #8e8e93;
+    }
+
+    .app-cta {
+        align-items: center;
+        background: #007afe;
+        border-radius: 28px;
+        color: #fff;
+        display: flex;
+        font-size: 15px;
+        justify-content: center;
+        padding: 5px 15px;
+        width: 67.1px;
+        height: 32.5px;
+    }
+
+    .app-share {
+        background: transparent;
+        border: 0;
+        line-height: 0;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .share-icon {
+        width: 28px;
+        height: 28px;
+        display: block;
+    }
+
+
+    .app-header .ms-auto {
+        margin-left: auto;
+    }
+
+}
+
+
+//電腦版使用 header區域 
+@media (min-width: 992px) {
+    .app-header {
+        --icon-size: 118px;
+        padding: 0;
+        margin: 22px 0px;
+        background: #fff;
+
+        .container-fluid {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .app-icon {
+        width: var(--icon-size);
+        height: var(--icon-size);
+        border-radius: 20px;
+        /* App Store 圓角 */
+        object-fit: cover;
+        display: block;
+    }
+
+    .app-title {
+        font-size: 22px;
         font-weight: 700;
         line-height: 1.2;
         margin-bottom: 2px;
@@ -328,6 +508,91 @@
     }
 }
 
+/* 評分區 電腦版（md 以上） */
+@media (min-width: 768px) {
+    .app-ratings {
+      background: #fff;
+      padding: 24px 32px;
+      border: none;
+      border-radius: 12px;
+      margin: 24px auto;
+      max-width: 960px; /* 視需求可調，保留左右留白 */
+    }
+  
+    .app-ratings .section-title {
+      font-weight: 800;
+      font-size: 28px;
+      line-height: 1.2;
+    }
+  
+    .app-ratings .see-all {
+      font-size: 16px;
+    }
+  
+    /* 讓左右兩側垂直置中 */
+    .app-ratings .row.g-0 {
+      align-items: center;
+    }
+  
+    .rating-big {
+      font-size: clamp(72px, 8vw, 96px); /* 大一點，桌機更醒目 */
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+  
+    .rating-sub {
+      margin-top: 12px;
+      color: #8e8e93;
+      font-size: 18px;
+    }
+  
+    .rating-histo .h-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+  
+    .rating-histo .stars {
+      width: 110px;           /* 拉長，和長條更對齊 */
+      font-size: 16px;
+      letter-spacing: 2px;
+      color: #8e8e93;
+      text-align: left;
+      flex: 0 0 auto;
+    }
+  
+    .rating-histo .bar {
+      position: relative;
+      flex: 1 1 auto;
+      height: 6px;            /* 比手機略厚 */
+      background: #eee;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+  
+    .rating-histo .bar > span {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 0;
+      background: #8f8f8f;    /* 灰色進度條 */
+      border-radius: 999px;
+      display: block;
+    }
+  
+    .rating-count {
+      color: #8e8e93;
+      font-size: 18px;
+    }
+  
+    /* 左側數字區塊和右側長條分隔一下 */
+    .app-ratings .col-auto.pe-4 {
+      padding-right: 32px !important;
+    }
+  }
+  
+
 //   單一用戶評論
 @media (max-width: 767.98px) {
     .review-card {
@@ -371,6 +636,67 @@
     }
 }
 
+//  電腦版單一用戶評論
+@media (min-width: 768px) {
+    .review-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      padding: 24px 28px;
+      margin: 20px auto;
+      max-width: 880px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+  
+    /* 滑過略有浮起感 */
+    .review-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
+  
+    .review-card .card-body {
+      padding: 0;
+    }
+  
+    .review-user {
+      font-weight: 700;
+      font-size: 18px;
+      color: #000;
+    }
+  
+    .stars {
+      font-size: 16px;
+      color: #ff9500;
+      letter-spacing: 1px;
+      line-height: 1;
+    }
+  
+    .review-date {
+      font-size: 15px;
+      color: #8e8e93;
+    }
+  
+    .review-text {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #1c1c1e;
+      flex: 1;
+      margin-right: 12px;
+    }
+  
+    .see-more {
+      font-size: 15px;
+      color: #007aff;
+      text-decoration: none;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+  
+    /* 調整上下距離感 */
+    .review-card .d-flex.align-items-center.mb-2 {
+      margin-bottom: 8px !important;
+    }
+  }
 
 // APP隱私說明區塊
 @media (max-width: 767.98px) {
@@ -432,7 +758,6 @@
         }
     }
 }
-
 // 內部卡片相容
 @media (max-width: 767.98px) {
 
@@ -746,126 +1071,735 @@
 
 
 }
-/* 僅隱藏 hidden 的 overlay（共用 OK） */
-.install-overlay[hidden] { display: none !important; }
+// 電腦版  隱私說明與內部卡
 
-@media (max-width: 767.98px) {
-  /* ===== iOS 專用 ===== */
-  #overlay-ios {
-    position: fixed; inset: 0; background: rgba(0,0,0,.65);
-    z-index: 1080; display: none;
-    &.show { display: block; }
-
-    /* 右上角虛線箭頭（固定在視口右上角） */
-    .ios-guide {
-      position: absolute; right: 8px; top: 8px;
-      width: 147px ;
-       pointer-events: none; z-index: 3;
+/* ====== Desktop (md+) ====== */
+@media (min-width: 768px) {
+    /* 整段區塊容器 */
+    .privacy-header {
+      background: #fff;
+      padding: 24px 32px;
+      border: none;
+      border-radius: 16px;
+      max-width: 1040px;
+      margin: 28px auto;
     }
-
-    /* 白卡容器（置中偏上） */
-    .install-sheet.ios-sheet{
-      position: absolute; left: 50%; top: 35%;
-      transform: translate(-50%, -50%);
-      width: 92%;
-      background: transparent; box-shadow: none; padding: 0;
+  
+    /* 標題列左右分散、留空間 */
+    .privacy-header .d-flex.align-items-center.mb-2 {
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px !important;
     }
-
-    /* ===== 上方泡泡（步驟 1） ===== */
-    .ios-bubble{
-      position: relative;
-      margin: 0px auto 53px;
-      width: calc(100% - 3px);
-      background: #fff; border-radius: 22px;
-      padding: 26px 26px;
-      box-shadow: 0 10px 28px rgba(0,0,0,.18);
-      .bubble-text{ font-size: 19px; font-weight: 800; color: #111; line-height: 30px; }
-      .ios-ellipsis-img{
-        position: absolute; right: 20px; top: 50%;
-        transform: translateY(-50%); width: 45px; height: 45px; opacity: .9;
-      }
+  
+    .privacy-header h5 { font-size: 24px; }
+    .privacy-header .see-more { font-size: 16px; white-space: nowrap; }
+  
+    .privacy-header .desc {
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 70ch;
+      margin-bottom: 8px;
     }
-
-    /* 藍色步驟徽章（只在 iOS 用） */
-    .step1-anchor, .step2-anchor { position: relative; }
-    .step1-badge{ top: -16px; }   /* 貼泡泡上緣 */
-    .step2-badge{ top: -18px; }   /* 貼紅框上緣 */
-
-    /* ===== 下方整張白卡（row-top / footer + 紅框列） ===== */
-    .ios-bottom-card{
-      background: #fff; border-radius: 28px;
-      box-shadow: 0 20px 40px rgba(0,0,0,.25);
-      overflow: hidden;           /* 讓上下 row 圖吃到圓角 */
+  
+    /* 卡片：並排 + 內容靠左（更接近商店頁） */
+    .privacy-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 24px;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.08);
       margin-top: 16px;
     }
-    .ios-bottom-box{padding: 16px 16px;}
+    .privacy-card .icon { margin-bottom: 0 !important; }
+    .privacy-card .icon img { width: 36px; height: 36px; }
+  
+    .privacy-card h6 {
+      font-size: 17px;
+      text-align: left;
+      margin: 0 0 4px;
+    }
+    .privacy-card p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .privacy-card .privacy-item { font-size: 15px; }
+  
+    /*  */
+    .privacy-header > .privacy-card:not(:nth-of-type(3)) {
+      display: inline-block;
+      width: calc(100% - 12px);
+      vertical-align: top;
+    }
+    .privacy-header > .privacy-card:nth-of-type(3) {
+      display: block;
+      width: 100%;
+    }
+  
+    /* 卡片#1、#2 裡的橫向列表間距 */
+    .privacy-header > .privacy-card:not(:nth-of-type(3)) .d-flex.flex-wrap {
+      gap: 12px 24px !important;
+    }
+  
+    /* 卡片#3：原本 2x2 grid，桌機放寬間距或加欄數 */
+    .privacy-grid {
+        .privacy-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 兩欄 */
+            grid-template-rows: repeat(2, auto);   /* 兩列 */
+            justify-items: start;                 /* 水平置中 */
+            align-items: center;
+            column-gap: 48px;                      /* 欄距 */
+            row-gap: 20px;                         /* 行距 */
+            margin-top: 16px;
+          }
+    }
+  
+    .privacy-item img { width: 20px; height: 20px; }
+  
+    /* 最下方說明文字 */
+    .privacy-note {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 16px 0 0;
+    }
+  
+    /* ===== Information 區 ===== */
+    .info-section {
+      background: #fff;
+      padding: 24px 32px;
+      border: 1px solid #e9e9e9;
+      border-radius: 16px;
+      max-width: 1040px;
+      margin: 20px auto 48px;
+    }
+    .info-title { font-size: 24px; margin-bottom: 18px; }
+  
+    .info-item {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .info-item .label {
+      min-width: 160px;
+      font-size: 15px;
+      color: #8e8e93;
+      margin-bottom: 0;
+    }
 
-    .ios-row{ display: block; width: 100%; }
-    .ios-bottom-inner{ padding: 0px 16px }
-
-    .ios-row-top , .ios-row-bottom{
-        max-width: 207px;
-        padding-left: 20px;
+    .info-item .value { font-size: 16px; color: #000; }
+  
+    .contact-link {
+      font-size: 15px;
+      color: #007aff;
+      text-decoration: none;
+      margin-top: 12px;
     }
-    /* 紅框目標列本體 */
-    .focus-row{
-      position: relative;
-      display: flex; align-items: center; justify-content: space-between; gap: 12px;
-      background: #fff; border-radius: 16px;
-      padding: 14px; box-shadow: inset 0 0 0 3px #ff3b30;
-    }
-    .left{ display: flex; align-items: center; gap: 12px; }
-    .icon-bubble{
-      width: 24px; height: 24px; border-radius: 12px;
-      display: inline-flex; align-items: center; justify-content: center;
-      .icon{ width: 22px; height: 22px; display: block; }
-    }
-    .label{ font-size: 14px; font-weight: 800; color: #111; }
-
-    /* ===== 手指 GIF：交替顯示 ===== */
-    .hand{ position: absolute; 
-        width: 100px; 
-        pointer-events: none; 
-        opacity: 0; z-index: 6;
-        top: -100px;
-        right: 30px;
-    }
-    @keyframes iosHandTop    { 0%,45%{opacity:1} 55%,100%{opacity:0} }
-    @keyframes iosHandBottom { 0%,45%{opacity:0} 55%,100%{opacity:1} }
-    .hand-top{ animation: iosHandTop 4s linear infinite; }
-    .hand-bottom{ animation: iosHandBottom 4s linear infinite; }
   }
+  
+/* ====== Desktop (md+) ====== */
+@media (min-width: 768px) {
+    /* 整段區塊容器 */
+    .privacy-header {
+      background: #fff;
+      padding: 24px 32px;
+      border: none;
+      border-radius: 16px;
+      max-width: 1040px;
+      margin: 28px auto;
+    }
+  
+    /* 標題列左右分散、留空間 */
+    .privacy-header .d-flex.align-items-center.mb-2 {
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px !important;
+    }
+  
+    .privacy-header h5 { font-size: 24px; }
+    .privacy-header .see-more { font-size: 16px; white-space: nowrap; }
+  
+    .privacy-header .desc {
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 70ch;
+      margin-bottom: 8px;
+    }
+  
+    /* 卡片：並排 + 內容靠左 */
+    .privacy-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 24px;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.08);
+      margin-top: 16px;
+    }
+    .privacy-card .icon { margin-bottom: 0 !important; }
+    .privacy-card .icon img { width: 36px; height: 36px; }
+  
+    .privacy-card h6 {
+      font-size: 17px;
+      text-align: left;
+      margin: 0 0 4px;
+    }
+    .privacy-card p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .privacy-card .privacy-item { font-size: 15px; }
+  
+    /* 版面寬度控制：#1、#2 同列，#3 佔滿 */
+    .privacy-header > .privacy-card:not(:nth-of-type(3)) {
+      display: inline-block;
+      width: calc(100% - 12px);
+      vertical-align: top;
+    }
+    .privacy-header > .privacy-card:nth-of-type(3) {
+      display: block;
+      width: 100%;
+    }
+  
+    /* 卡片#1、#2 裡的橫向列表間距 */
+    .privacy-header > .privacy-card:not(:nth-of-type(3)) .d-flex.flex-wrap {
+      gap: 12px 24px !important;
+    }
+  
+    /* 卡片#3：2x2 排列（關鍵修正：移除錯誤巢狀） */
+    .privacy-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 每行 2 個 */
+      grid-template-rows: repeat(2, auto);   /* 共 2 行 */
+      justify-items: start;                 /* 水平置中 */
+      align-items: center;                   /* 垂直置中 */
+      column-gap: 48px;                      /* 欄距 */
+      row-gap: 20px;                         /* 行距 */
+      margin-top: 16px;
+    }
+  
+    .privacy-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;               /* icon 與文字間距 */
+      text-align: center;     /* 讓兩欄置中視覺一致 */
+    }
+  
+    .privacy-item img { width: 20px; height: 20px; }
+  
+    /* 最下方說明文字 */
+    .privacy-note {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 16px 0 0;
+    }
+  
+    /* ===== Information 區 ===== */
+    .info-section {
+      background: #fff;
+      padding: 24px 32px;
+      border: none;
+      border-radius: 16px;
+      max-width: 1040px;
+      margin: 20px auto 48px;
+    }
+    .info-title { font-size: 24px; margin-bottom: 18px; }
+  
+    .info-item {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .info-item .label {
+      min-width: 160px;
+      font-size: 15px;
+      color: #8e8e93;
+      margin-bottom: 0;
+    }
+    .info-item .value { font-size: 16px; color: #000; }
+  
+    .contact-link {
+      font-size: 15px;
+      color: #e2e2e2;
+      text-decoration: none;
+      margin-top: 12px;
+    }
+  }
+  
+  /* ====== Wider desktop (xl+) ====== */
+  @media (min-width: 1200px) {
+    .privacy-header,
+    .info-section { max-width: 1140px; padding: 28px 36px; }
+  
+    .privacy-header h5 { font-size: 26px; }
+    .privacy-card { gap: 20px; padding: 22px 28px; }
+    .privacy-card .icon img { width: 40px; height: 40px; }
+  
+    /* 放寬卡片#3 的格線間距 */
+    .privacy-grid { column-gap: 36px; row-gap: 16px; }
+  
+    .info-title { font-size: 26px; }
+  }
+  
 
+// 黑幕區塊  
+@media (max-width: 767.98px) {
 
+    /* ===== Android  ===== */
+    #overlay-ios {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, .65);
+        z-index: 1080;
+        display: none;
 
+        &.show {
+            display: block;
+        }
 
+        /* 右上角虛線箭頭（固定在視口右上角） */
+        .ios-guide {
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            width: 147px;
+            pointer-events: none;
+            z-index: 3;
+        }
 
-  /* ===== Android 專用（把你原本的 .install-sheet 手機樣式改到這個 scope 底下） ===== */
-  #overlay-android {
-    /* 黑幕 */
-    position: fixed; inset: 0; background: rgba(0,0,0,.65);
-    z-index: 1080; display: none;
-    &.show{ display:block; }
+        /* 白卡容器（置中偏上） */
+        .install-sheet.ios-sheet {
+            position: absolute;
+            left: 50%;
+            top: 35%;
+            transform: translate(-50%, -50%);
+            width: 92%;
+            background: transparent;
+            box-shadow: none;
+            padding: 0;
+        }
 
-    /* 這裡放你原本 Android 的 .install-sheet / .sheet-list ...  */
-    .install-sheet{
-      box-sizing: border-box;
-      position: absolute; left: 50%; top: 50%;
-      transform: translate(-50%, -50%);
-      width: 85%; background: #efefef; border-radius: 28px;
-      box-shadow: 0 24px 70px rgba(0,0,0,.25);
-      padding: 36px 16px 22px; overflow: visible;
+        /* ===== 上方泡泡（步驟 1） ===== */
+        .ios-bubble {
+            position: relative;
+            margin: 0px auto 53px;
+            width: calc(100% - 3px);
+            background: #fff;
+            border-radius: 22px;
+            padding: 26px 26px;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, .18);
+
+            .bubble-text {
+                font-size: 19px;
+                font-weight: 800;
+                color: #111;
+                line-height: 30px;
+            }
+
+            .ios-ellipsis-img {
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 45px;
+                height: 45px;
+                opacity: .9;
+            }
+        }
+
+        /* 藍色步驟徽章（只在 iOS 用） */
+        .step1-anchor,
+        .step2-anchor {
+            position: relative;
+        }
+
+        .step1-badge {
+            top: -16px;
+        }
+
+        /* 貼泡泡上緣 */
+        .step2-badge {
+            top: -18px;
+        }
+
+        /* 貼紅框上緣 */
+
+        /* ===== 下方整張白卡（row-top / footer + 紅框列） ===== */
+        .ios-bottom-card {
+            background: #fff;
+            border-radius: 28px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .25);
+            overflow: hidden;
+            /* 讓上下 row 圖吃到圓角 */
+            margin-top: 16px;
+        }
+
+        .ios-bottom-box {
+            padding: 16px 16px;
+        }
+
+        .ios-row {
+            display: block;
+            width: 100%;
+        }
+
+        .ios-bottom-inner {
+            padding: 0px 16px
+        }
+
+        .ios-row-top,
+        .ios-row-bottom {
+            max-width: 207px;
+            padding-left: 20px;
+        }
+
+        /* 紅框目標列本體 */
+        .focus-row {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            background: #fff;
+            border-radius: 16px;
+            padding: 14px;
+            box-shadow: inset 0 0 0 3px #ff3b30;
+        }
+
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .icon-bubble {
+            width: 24px;
+            height: 24px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            .icon {
+                width: 22px;
+                height: 22px;
+                display: block;
+            }
+        }
+
+        .label {
+            font-size: 14px;
+            font-weight: 800;
+            color: #111;
+        }
+
+        /* ===== 手指 GIF：交替顯示 ===== */
+        .hand {
+            position: absolute;
+            width: 100px;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 6;
+            top: -100px;
+            right: 30px;
+        }
+
+        @keyframes iosHandTop {
+
+            0%,
+            45% {
+                opacity: 1
+            }
+
+            55%,
+            100% {
+                opacity: 0
+            }
+        }
+
+        @keyframes iosHandBottom {
+
+            0%,
+            45% {
+                opacity: 0
+            }
+
+            55%,
+            100% {
+                opacity: 1
+            }
+        }
+
+        .hand-top {
+            animation: iosHandTop 4s linear infinite;
+        }
+
+        .hand-bottom {
+            animation: iosHandBottom 4s linear infinite;
+        }
     }
 
-    .android-guide{
-        position: absolute;
-        left: 12px;                /* 例：固定在左上角或你要的位置 */
-        top: 12px;
-        width: 140px;
-        pointer-events: none;
-        z-index: 3;
-      }
+    /* ===== iOS 專用 ===== */
+    #overlay-android {
+        /* 黑幕 */
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, .65);
+        z-index: 1080;
+        display: none;
 
-    /* 其餘 Android 樣式（sheet-list、item、徽章、手指動畫…）維持你原本設定 */
-  }
+        &.show {
+            display: block;
+        }
+
+        /* 這裡放你原本 Android 的 .install-sheet / .sheet-list ...  */
+        .install-sheet {
+            box-sizing: border-box;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 85%;
+            background: #efefef;
+            border-radius: 28px;
+            box-shadow: 0 24px 70px rgba(0, 0, 0, .25);
+            padding: 36px 16px 22px;
+            overflow: visible;
+        }
+
+        .android-guide {
+            position: absolute;
+            left: 12px;
+            /* 例：固定在左上角或你要的位置 */
+            top: 12px;
+            width: 140px;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        /* 其餘 Android 樣式（sheet-list、item、徽章、手指動畫…）維持你原本設定 */
+    }
 }
+
+/* ===== Desktop (md+) 顯示 iOS 黑幕，關閉 Android ===== */
+@media (min-width: 768px) {
+    #overlay-ios {
+      display: block !important;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: 1080;
+  
+      &.show {
+        display: block;
+      }
+    }
+  
+    #overlay-android {
+      display: none !important;
+    }
+  }
+
+  
+/* 僅隱藏 hidden 的 overlay（共用 OK） */
+.install-overlay[hidden] {
+    display: none !important;
+}
+
+//電腦版黑幕
+/* 電腦版黑幕（修正版，md+） */
+@media (min-width: 768px) {
+    /* 強制顯示 iOS overlay（即使 HTML 上有 hidden） */
+    #overlay-ios,
+    #overlay-ios[hidden] {
+      display: flex !important;           /* 置中用 flex */
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      inset: 0;
+      z-index: 1080;
+      background: rgba(0, 0, 0, .65);     /* 黑幕 */
+    }
+  
+    /* 關閉 Android overlay */
+    #overlay-android { display: none !important; }
+  
+    /* 右上角虛線箭頭 */
+    #overlay-ios .ios-guide {
+      position: absolute;
+      right: 24px;
+      top: 24px;
+      width: 180px;
+      pointer-events: none;
+    }
+  
+    /* 主要白色容器 */
+    #overlay-ios .install-sheet.ios-sheet {
+      position: relative;
+      width: 100% !important;
+      max-width: none !important;
+      background: transparent;
+      border-radius: 24px;
+      box-shadow: none;
+      padding: 0;
+      text-align: center;
+    }
+  
+    /* ===== Step1 區（讓徽章能置頂且泡泡滿寬） ===== */
+    #overlay-ios .step1-anchor {
+      position: relative;
+      display: block;
+      width: 100% !important;
+      padding-top: 22px;                 /* 為徽章騰出空間 */
+    }
+  
+    /* 泡泡改成 100% 寬 */
+    #overlay-ios .ios-bubble {
+        display: inline-flex !important;      /* 改成 inline-flex */
+        align-items: center;                  /* 垂直置中 */
+        justify-content: center;              /* 水平置中 */
+        gap: 16px;                            /* 文字與 icon 間距 */
+        width: 100% !important;
+        max-width: none !important;
+        border-radius: 24px;
+        padding: 28px 40px;
+        background: #fff;
+        box-shadow: 0 12px 28px rgba(0,0,0,.18);
+    }
+
+
+  
+    #overlay-ios .ios-bubble .bubble-text {
+      font-size: 22px;
+      font-weight: 800;
+      color: #111;
+      line-height: 1.5;
+      white-space: nowrap;               /* 需要換行就移除這行 */
+    }
+  
+    #overlay-ios .ios-bubble .ios-ellipsis-img {
+      position: relative;
+      top: -2px;
+      margin-left: 16px;
+      transform: none;
+      width: 36px;
+      height: 36px;
+      
+    }
+
+    
+  
+    /* 「Bước 1」藍色徽章：置中貼在泡泡上緣 */
+    #overlay-ios .step1-badge {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, -60%);
+      z-index: 2;                       /* 壓在泡泡之上 */
+      background: #007aff;
+      color: #fff;
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 32px;
+      padding: 0 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+      box-sizing: border-box;
+    }
+
+    #overlay-ios .ios-bubble .step1-badge {
+        position: absolute !important;
+        left: 50% !important;
+        top: 0 !important;
+        transform: translate(-50%, -60%) !important;
+        z-index: 3 !important;
+        background: #007aff;
+        color: #fff;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 32px;
+        padding: 0 10px;
+        border-radius: 20px;
+        white-space: nowrap;
+        pointer-events: none; /* 避免擋到點擊 */
+      }
+  
+    /* 下方整張白卡（承載紅框列與上下灰條圖） */
+    #overlay-ios .ios-bottom-card {
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 18px 40px rgba(0,0,0,.2);
+      overflow: hidden;
+      margin-top: 12px;
+      margin-bottom: 100px;
+    }
+  
+    #overlay-ios .ios-bottom-box { padding: 20px 22px; }
+  
+    #overlay-ios .ios-row { display: block; width: 100%; }
+    #overlay-ios .ios-row-top,
+    #overlay-ios .ios-row-bottom { max-width: none; height: 45px; width: 207px}
+  
+    #overlay-ios .ios-bottom-inner { padding: 0 10px 12px; }
+  
+    /* 紅框列 */
+    #overlay-ios .focus-row {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border: 2px solid #ff3b30;
+      border-radius: 14px;
+      padding: 16px 18px;
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(0,0,0,.08);
+      margin-top: 8px;
+    }
+  
+    #overlay-ios .focus-row .left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+  
+    #overlay-ios .focus-row .icon-bubble {
+      width: 28px; height: 28px; border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: #f3f4f6;
+    }
+  
+    #overlay-ios .focus-row .icon { width: 22px; height: 22px; display: block; }
+  
+    #overlay-ios .focus-row .label {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111;
+    }
+  
+    /* 手指：在白卡右下角，做輕微晃動 */
+    #overlay-ios .hand {
+      position: absolute;
+      right: 48px;
+      bottom: 36px;
+      width: 92px;
+      pointer-events: none;
+      opacity: .95;
+      animation: handNod 2.2s ease-in-out infinite alternate;
+    }
+    #overlay-ios .hand-top { display: block; }
+    #overlay-ios .hand-bottom { display: none; }
+  
+    @keyframes handNod {
+      from { transform: translate(0,0) rotate(0deg); }
+      to   { transform: translate(14px,-12px) rotate(2.5deg); }
+    }
+  } /* ← 這裡才是整個 @media 的結束 */
+  
+
+  
